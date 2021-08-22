@@ -1,0 +1,16 @@
+{% extends "polls/base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <h2>
+        <a href="{{ post.get_absolute_url }}">
+            {{ post.title }}
+        </a>
+    </h2>
+    
+    <p class="date">
+        Publicado em {{ post.created }} por {{ post.author }}
+    </p>
+    {{ post.body|linebreaks }}
+{% endblock %}
